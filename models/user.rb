@@ -1,6 +1,8 @@
 require 'bcrypt'
 
 class User < ActiveRecord::Base
+  has_many :hangmen
+  
   include BCrypt
 
   def password

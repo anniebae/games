@@ -4,8 +4,15 @@ class HangmanController < ApplicationController
   end
 
   get '/word' do
-    words = Word.all
-    sample_word = words.sample[:word]
-    sample_word.to_json
+    authenticate!
+    word = Word.all.sample.word
+
+    hangman = Hangman.create(user_id: current_user.id, word: word)
+    word.to_json
+  end
+
+  patch '/guess_letter' do
+    authenticate!
+
   end
 end

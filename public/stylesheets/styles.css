@@ -18,4 +18,5 @@ body {
 
 #random-word {
 	vertical-align: middle;
+	position: absolute;
 }
