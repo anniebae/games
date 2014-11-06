@@ -1,0 +1,17 @@
+body {
+	background-color: lightgrey;
+}
+
+.avatar {
+	height: 300px;
+	width: 300px;
+	border-radius: 150px;
+}
+
+.games {
+	width: 150px;
+	margin: 0 auto;
+	text-align: center;
+	background-color: white;
+	padding: 30px;
+}
