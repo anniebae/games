@@ -1,12 +1,12 @@
 class Hangman < ActiveRecord::Base
   belongs_to :user
 
-  def initialize
-    @game_status = []
-    @bad_guesses = []
-    @incorrect = 0
-    @word = Word.all.sample.word
-  end
+  # def initialize
+  #   @game_status = []
+  #   @bad_guesses = []
+  #   @incorrect = 0
+  #   @word = Word.all.sample.word
+  # end
 
   def guess_letter(letter)
     letter.upcase!
@@ -17,11 +17,14 @@ class Hangman < ActiveRecord::Base
   end
 
   def game_state
-    game_state = self.word.gsub(/\w/, " ").chars 
+    game_state = self.word.gsub(/\w/, " ").chars
+    game_state_arr = [].self.word.length
 
+
+    # ***************** TO DO **********************
     # find out length of word.. substitute with " "
     # use regex to figure out how to select every letter of word
-
+    # new array with specified length
   end
 
 

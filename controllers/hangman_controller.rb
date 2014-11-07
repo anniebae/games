@@ -6,7 +6,6 @@ class HangmanController < ApplicationController
   get '/word' do
     authenticate!
     word = Word.all.sample.word
-
     hangman = Hangman.create(user_id: current_user.id, word: word)
     word.to_json
   end

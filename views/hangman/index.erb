@@ -5,36 +5,76 @@
 <input type="submit" value="NEW WORD" class="new-game">
 <br>
 <br>
-<input type="submit" value = "A" class="alphabet-letter">
-<input type="submit" value = "B" class="alphabet-letter">
-<input type="submit" value = "C" class="alphabet-letter">
-<input type="submit" value = "D" class="alphabet-letter">
-<input type="submit" value = "E" class="alphabet-letter">
-<input type="submit" value = "F" class="alphabet-letter">
-<input type="submit" value = "G" class="alphabet-letter">
-<input type="submit" value = "H" class="alphabet-letter">
-<input type="submit" value = "I" class="alphabet-letter">
-<input type="submit" value = "J" class="alphabet-letter">
-<input type="submit" value = "K" class="alphabet-letter">
-<input type="submit" value = "L" class="alphabet-letter">
-<input type="submit" value = "M" class="alphabet-letter">
+<button class="alphabet-letter">A</button>
+<button class="alphabet-letter">B</button>
+<button class="alphabet-letter">C</button>
+<button class="alphabet-letter">D</button>
+<button class="alphabet-letter">E</button>
+<button class="alphabet-letter">F</button>
+<button class="alphabet-letter">G</button>
+<button class="alphabet-letter">H</button>
+<button class="alphabet-letter">I</button>
+<button class="alphabet-letter">J</button>
+<button class="alphabet-letter">K</button>
+<button class="alphabet-letter">L</button>
+<button class="alphabet-letter">M</button>
 <br>
-<input type="submit" value = "N" class="alphabet-letter">
-<input type="submit" value = "O" class="alphabet-letter">
-<input type="submit" value = "P" class="alphabet-letter">
-<input type="submit" value = "Q" class="alphabet-letter">
-<input type="submit" value = "R" class="alphabet-letter">
-<input type="submit" value = "S" class="alphabet-letter">
-<input type="submit" value = "T" class="alphabet-letter">
-<input type="submit" value = "U" class="alphabet-letter">
-<input type="submit" value = "V" class="alphabet-letter">
-<input type="submit" value = "W" class="alphabet-letter">
-<input type="submit" value = "X" class="alphabet-letter">
-<input type="submit" value = "Y" class="alphabet-letter">
-<input type="submit" value = "Z" class="alphabet-letter">
+<button class="alphabet-letter">N</button>
+<button class="alphabet-letter">O</button>
+<button class="alphabet-letter">P</button>
+<button class="alphabet-letter">Q</button>
+<button class="alphabet-letter">R</button>
+<button class="alphabet-letter">S</button>
+<button class="alphabet-letter">T</button>
+<button class="alphabet-letter">U</button>
+<button class="alphabet-letter">V</button>
+<button class="alphabet-letter">W</button>
+<button class="alphabet-letter">X</button>
+<button class="alphabet-letter">Y</button>
+<button class="alphabet-letter">Z</button>
 <br>
 <br>
+
+
+
+<div class="guesses">
+	<h3>GUESSES</h3>
+	<p>
+		# Good
+		<div class="good-guesses"></div>
+	</p>
+	<p>
+		# Bad
+		<div class="bad-guesses"></div>
+	</p>
+</div>
+
+
+
 </center>
 
 <div id="random-word">
 </div>
+
+<script>
+$(function(){
+	
+	$('.new-game').on("click", function(e){
+		e.preventDefault();
+		$('#random-word').empty();
+		randomWord();
+	});
+
+
+// ****************** TROUBLE *********************
+	$('.alphabet-letter').on("click", function(e){
+		debugger;
+		e.preventDefault();
+		var guessed_letter = $(this).text().toLowerCase();
+		displayLetter(guessed_letter);
+	})
+// ****************** TROUBLE *********************
+
+
+});
+</script>

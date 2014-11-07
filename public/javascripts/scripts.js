@@ -1,6 +1,6 @@
 console.log('yay')
 
-// ** Global **
+// ***** Global *****
 var word;
 
 
@@ -16,18 +16,6 @@ function randomWord(){
 	});
 }
 
-
-
-// function emptyString(){
-// 	for (var i = 0; i < word.length; i++){
-// 		WordArray[i] = word.charAt(i);
-// 		WordUArray[i] = " ";
-// 	}
-// 		WordU = WordUArray.join("");
-// 		document.getElementById("random-word").innerHTML = WordU;
-// 		document.getElementByClass("alphabet-letter").innerHTML = Word.length;
-// }
-
 // ****************** TROUBLE *********************
 function guessLetter(guessed_letter){
 	$.ajax({
@@ -36,24 +24,25 @@ function guessLetter(guessed_letter){
 		dataType: "json",
 		data: {letter: guessed_letter},
 		success: displayLetter
-		// success: function(json) {
-		// 	debugger;
-		// 	letter = json.letter;
-		// 	displayLetter(letter);
-		// }
 	});
 }
+
 
 function displayLetter(letter){
 	for (var i=0; i < word.length; i++){
-	$letter.empty();
-	$(letter).each(function(idx, letter){
-		$letter.append(div);
-	});
-
+		if(word[i] === letter) {
+			$($('#random-word div')[i]).text(letter);
+		}
 	}
 }
 
+
+
+function updateGuessesBox(letter){
+	var letterDiv = $('<div>').addClass('good-guess').text(letter);
+	$('.good-guesses').append(div);
+	$('.bad-guesses').append(div);
+}
 // ****************** TROUBLE *********************
 
 function createDivForLetters(word){
@@ -70,35 +59,3 @@ function createDivForLetters(word){
 	};
 };
 
-
-// function updateLetter(letter){
-// 	Updates = 0;
-// 	for (var i = 0; i < word.length; i++){
-// 		WordArray[i] = word.charAt(i);
-// 		if(word.charAt(i) == letter){
-// 			WordUArray[i] = letter;
-// 			Updates += 1;
-// 		}
-// 	}
-// }
-
-
-
-
-$(function(){
-	
-	$('.new-game').on("click", function(e){
-		e.preventDefault();
-		$('#random-word').empty();
-		randomWord();
-	});
-
-	$('.alphabet-letter').on("click", function(e){
-		e.preventDefault();
-		var guessed_letter = $(this).val();
-		guessLetter(guessed_letter);
-	})
-
-
-
-});

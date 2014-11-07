@@ -20,3 +20,10 @@ body {
 	vertical-align: middle;
 	position: absolute;
 }
+
+.guesses {
+	width: 200px;
+	height: 350px;
+	background-color: white;
+	float: right;
+}
