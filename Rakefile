@@ -43,17 +43,4 @@ namespace :db do
     conn.close
   end
 
-
-
-  # desc "Add random words"
-  # task :random_word do
-
-  #   require './models/word'
-
-  #   Word.create({word: "lemur"})
-  #   Word.create({word: "elephant"})
-  #   Word.create({word: "monkey"})
-  # end
-
-
 end

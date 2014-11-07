@@ -29,21 +29,23 @@ function randomWord(){
 // }
 
 // ****************** TROUBLE *********************
-function guessLetter(){
+function guessLetter(guessed_letter){
 	$.ajax({
 		url: "/hangman/guess_letter",
 		method: 'PATCH',
 		dataType: "json",
-		data: {letter: guessed_letter}
-		success: function(json) {
-			letter = json;
-			displayLetter(letter);
-		}
+		data: {letter: guessed_letter},
+		success: displayLetter
+		// success: function(json) {
+		// 	debugger;
+		// 	letter = json.letter;
+		// 	displayLetter(letter);
+		// }
 	});
 }
 
 function displayLetter(letter){
-	for (var i=0; i < letter.length; i++){
+	for (var i=0; i < word.length; i++){
 	$letter.empty();
 	$(letter).each(function(idx, letter){
 		$letter.append(div);
@@ -93,7 +95,10 @@ $(function(){
 
 	$('.alphabet-letter').on("click", function(e){
 		e.preventDefault();
-		guessLetter();
+		var guessed_letter = $(this).val();
+		guessLetter(guessed_letter);
 	})
+
+
 
 });

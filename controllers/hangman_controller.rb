@@ -13,6 +13,14 @@ class HangmanController < ApplicationController
 
   patch '/guess_letter' do
     authenticate!
-
+    guessed_letter = params[:letter]
+    object_to_return = {}
+    word = current_user.hangmen.last.word
+    if word.include? guessed_letter
+      word.index(guessed_letter)
+      object_to_return[:letter] = guessed_letter
+    end
+    object_to_return.to_json
   end
+
 end
