@@ -2,6 +2,9 @@ console.log('yay')
 
 // ***** Global *****
 var word;
+var corrects = [];
+var incorrects = [];
+
 
 
 function randomWord(){
@@ -16,34 +19,58 @@ function randomWord(){
 	});
 }
 
-// ****************** TROUBLE *********************
 function guessLetter(guessed_letter){
 	$.ajax({
 		url: "/hangman/guess_letter",
 		method: 'PATCH',
 		dataType: "json",
 		data: {letter: guessed_letter},
-		success: displayLetter
+		
+		// data = {letter: 't'}
+		success: function(data) { 
+			checkLetter(data.letter);
+			displayLetter(data.letter)
+		}
 	});
 }
 
+function checkLetter(letter){
+	if (word.indexOf(letter) == -1 ){
+		incorrects.push(letter);
+	} else {
+		corrects.push(letter);
+	}	
+	displayGuessed();
+}
+
+function displayGuessed(){
+	$correct = $(".good-guesses");
+	$correct.text(corrects);
+	$incorrect = $(".bad-guesses");
+	$incorrect.text(incorrects);
+}
 
 function displayLetter(letter){
 	for (var i=0; i < word.length; i++){
 		if(word[i] === letter) {
 			$($('#random-word div')[i]).text(letter);
-		}
+		} 
 	}
 }
 
 
 
-function updateGuessesBox(letter){
-	var letterDiv = $('<div>').addClass('good-guess').text(letter);
-	$('.good-guesses').append(div);
-	$('.bad-guesses').append(div);
-}
+
 // ****************** TROUBLE *********************
+
+function updateGoodGuessesBox(letter){
+	var goodLetterDiv = $('<div>').addClass('good-guess').text(letter);
+	$('.good-guesses').append(letterDiv);
+}
+
+// ****************** TROUBLE *********************
+
+
 
 function createDivForLetters(word){
 

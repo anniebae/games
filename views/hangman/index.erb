@@ -68,13 +68,37 @@ $(function(){
 
 // ****************** TROUBLE *********************
 	$('.alphabet-letter').on("click", function(e){
-		debugger;
 		e.preventDefault();
 		var guessed_letter = $(this).text().toLowerCase();
-		displayLetter(guessed_letter);
+		// displayLetter(guessed_letter);  LETS MAKE AN AJAX CALL INSTEAD
+		guessLetter(guessed_letter);
 	})
 // ****************** TROUBLE *********************
 
 
+$('.good-guesses').on("click", function(e){
+	e.preventDefault();
+	var goodLetter = $(this)
+})
+
+
+function updateGoodGuessesBox(letter){
+	var goodLetterDiv = $('<div>').addClass('good-guess').text(letter);
+	$('.good-guesses').append(letterDiv);
+}
+
+
+
+
+
 });
 </script>
+
+
+
+
+
+
+
+
+
