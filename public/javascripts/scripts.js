@@ -61,17 +61,6 @@ function displayLetter(letter){
 
 
 
-// ****************** TROUBLE *********************
-
-function updateGoodGuessesBox(letter){
-	var goodLetterDiv = $('<div>').addClass('good-guess').text(letter);
-	$('.good-guesses').append(letterDiv);
-}
-
-// ****************** TROUBLE *********************
-
-
-
 function createDivForLetters(word){
 
 	for (var i = 0; i < word.length; i++) {
@@ -81,6 +70,7 @@ function createDivForLetters(word){
 		div.style.background = "white";
 		div.style.border = "solid 1px gray";
 		div.style.display = "inline-block";
+		div.style.center
 		// div.innerHTML = word[i];
 		$('#random-word').append(div);
 	};
