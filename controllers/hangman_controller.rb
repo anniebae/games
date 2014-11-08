@@ -6,7 +6,11 @@ class HangmanController < ApplicationController
   get '/word' do
     authenticate!
     word = Word.all.sample.word
-    hangman = Hangman.create(user_id: current_user.id, word: word)
+    hangman = Hangman.create({
+      user_id: current_user.id, 
+      word: word,
+      game_status: ("_")*word.length,
+      })
     word.to_json
   end
 
@@ -16,13 +20,14 @@ class HangmanController < ApplicationController
     # game.update(params[:hangman])
     
     guessed_letter = params[:letter]
-    object_to_return = {}    # ruby hash
+    # object_to_return = {}    # ruby hash
     game = current_user.hangmen.last
     word = game.word
-    object_to_return[:letter] = guessed_letter
+    # object_to_return[:letter] = guessed_letter
     if word.include? guessed_letter
-      word.index(guessed_letter)
-      object_to_return[:letter] = guessed_letter # {letter: 't'}
+      game.guess_letter(guessed_letter)
+      # word.index(guessed_letter)
+      # object_to_return[:letter] = guessed_letter # {letter: 't'}
     else
       game.bad_guesses += guessed_letter
     end

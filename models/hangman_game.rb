@@ -4,29 +4,18 @@ class Hangman < ActiveRecord::Base
 
   def guess_letter(letter)
 
-    letter.upcase!
-    total_lives = 9
-    guess_number = 0
-    g = guess.last
-
     idx = self.word.index(letter) # set variable 'idx' to find index of letter
     if idx
-      self.game_status[idx] = letter
-      game_status << letter       # add letter to game_status column
+      state = self.game_status.dup
+      state[idx] = letter
+      self.game_status = state
     else
-
       bad_guesses += letter       # add letter to bad_guesses column
     end
-    
+
     self.save
 
   end
-
-
-
-# player has nine lives
-# remove a life after every bad guess
-
 
 
   def game_state

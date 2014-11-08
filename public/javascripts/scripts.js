@@ -27,7 +27,8 @@ function guessLetter(guessed_letter){
 		data: {letter: guessed_letter},
 		
 		// data = {letter: 't'}
-		success: function(data) { 
+		success: function(data) {
+			console.log(data) 
 			checkLetter(data.letter);
 			displayLetter(data.letter);
 			if (data.lives <=0 ){
