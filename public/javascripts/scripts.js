@@ -29,7 +29,13 @@ function guessLetter(guessed_letter){
 		// data = {letter: 't'}
 		success: function(data) { 
 			checkLetter(data.letter);
-			displayLetter(data.letter)
+			displayLetter(data.letter);
+			if (data.lives <=0 ){
+				alert('You have lost')
+			}
+			if (data.complete){
+				alert('You have Won')
+			}
 		}
 	});
 }

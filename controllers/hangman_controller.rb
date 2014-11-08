@@ -17,13 +17,24 @@ class HangmanController < ApplicationController
     
     guessed_letter = params[:letter]
     object_to_return = {}    # ruby hash
-    word = current_user.hangmen.last.word
+    game = current_user.hangmen.last
+    word = game.word
     object_to_return[:letter] = guessed_letter
     if word.include? guessed_letter
       word.index(guessed_letter)
       object_to_return[:letter] = guessed_letter # {letter: 't'}
+    else
+      game.bad_guesses += guessed_letter
     end
-    object_to_return.to_json  # {letter: 't'}.to_json => responds to request with JSON representation of hash
+    game.save
+
+    {
+      letter: guessed_letter,
+      game_status: game.game_status,
+      bad_guesses: game.bad_guesses,
+      lives: (9 - game.bad_guesses.length),
+      complete: game.game_status == game.word
+    }.to_json  # {letter: 't'}.to_json => responds to request with JSON representation of hash
   end
 
 end

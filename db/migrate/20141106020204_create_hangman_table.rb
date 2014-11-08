@@ -2,10 +2,10 @@ class CreateHangmanTable < ActiveRecord::Migration
   def change
     create_table :hangman do |t|
       t.string :word
-      t.boolean :complete
+      t.boolean :complete, default: false
       t.references :user
-      t.string :game_status
-      t.string :bad_guesses
+      t.string :game_status, default: ""
+      t.string :bad_guesses, default: ""
 
       t.timestamps
     end

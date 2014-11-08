@@ -72,12 +72,7 @@ $(function(){
 
 // ****************** TROUBLE *********************
 
-	// $('.new-game').on("click", function(e){
-	// 	e.preventDefault();
-	// 	$('.good-guesses').empty();
-	// 	$('.bad-guesses').empty();
-	// 	randomWord();
-	// });
+
 
 // ****************** TROUBLE *********************
 	
@@ -87,19 +82,6 @@ $(function(){
 		// displayLetter(guessed_letter);  LETS MAKE AN AJAX CALL INSTEAD
 		guessLetter(guessed_letter);
 	})
-
-
-$('.good-guesses').on("click", function(e){
-	e.preventDefault();
-	var goodLetter = $(this)
-})
-
-
-function updateGoodGuessesBox(letter){
-	var goodLetterDiv = $('<div>').addClass('good-guess').text(letter);
-	$('.good-guesses').append(letterDiv);
-}
-
 
 
 

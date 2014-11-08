@@ -18,10 +18,10 @@ ActiveRecord::Schema.define(version: 20141106204736) do
 
   create_table "hangmen", force: true do |t|
     t.string   "word"
-    t.boolean  "complete"
+    t.boolean  "complete",    default: false
     t.integer  "user_id"
-    t.string   "game_status"
-    t.string   "bad_guesses"
+    t.string   "game_status", default: ""
+    t.string   "bad_guesses", default: ""
     t.datetime "created_at"
     t.datetime "updated_at"
   end
