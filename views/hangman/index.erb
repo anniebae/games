@@ -1,6 +1,6 @@
 <div class="letters">
 <div class="center">
-<h2>Hangman</h2>
+<h2>HANGMAN</h2>
 <input type="submit" value="NEW WORD" class="new-game">
 <div id="random-word">
 </div>
@@ -33,57 +33,13 @@
 <button class="alphabet-letter">Y</button>
 <button class="alphabet-letter">Z</button>
 </div>
-<!-- 
-<br>
-<br>
-<input type="submit" value="A" class="alphabet-letter">
-<input type="submit" value="B" class="alphabet-letter">
-<input type="submit" value="C" class="alphabet-letter">
-<input type="submit" value="D" class="alphabet-letter">
-<input type="submit" value="E" class="alphabet-letter">
-<input type="submit" value="F" class="alphabet-letter">
-<input type="submit" value="G" class="alphabet-letter">
-<input type="submit" value="H" class="alphabet-letter">
-<input type="submit" value="I" class="alphabet-letter">
-<input type="submit" value="J" class="alphabet-letter">
-<input type="submit" value="K" class="alphabet-letter">
-<input type="submit" value="L" class="alphabet-letter">
-<input type="submit" value="M" class="alphabet-letter">
-<br>
-<input type="submit" value="N" class="alphabet-letter">
-<input type="submit" value="O" class="alphabet-letter">
-<input type="submit" value="P" class="alphabet-letter">
-<input type="submit" value="Q" class="alphabet-letter">
-<input type="submit" value="R" class="alphabet-letter">
-<input type="submit" value="S" class="alphabet-letter">
-<input type="submit" value="T" class="alphabet-letter">
-<input type="submit" value="U" class="alphabet-letter">
-<input type="submit" value="V" class="alphabet-letter">
-<input type="submit" value="W" class="alphabet-letter">
-<input type="submit" value="X" class="alphabet-letter">
-<input type="submit" value="Y" class="alphabet-letter">
-<input type="submit" value="Z" class="alphabet-letter">
-<br>
-<br>
- -->
-
 
 <div class="guesses">
-	<h3>GUESSES</h3>
-	<p>
-		<span class="guesses-style">Good</span>
-		<div class="good-guesses"></div>
-	</p>
-	<p>
-		<span class="guesses-style">Bad</span>
-		<div class="bad-guesses"></div>
-	</p>
+	<h3>BAD GUESSES</h3>
+		<p>
+			<div class="bad-guesses"></div>
+		</p>
 </div>
-
-
-
-</div>
-
 
 <script>
 $(function(){
@@ -99,7 +55,7 @@ $(function(){
 	
 	$('.alphabet-letter').on("click", function(e){
 		e.preventDefault();
-		var guessed_letter = $(this).text().toLowerCase();
+		var guessed_letter = $(this).text().toUpperCase();
 		// displayLetter(guessed_letter);  LETS MAKE AN AJAX CALL INSTEAD
 		guessLetter(guessed_letter);
 	})

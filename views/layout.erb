@@ -10,6 +10,7 @@
 <body>
 <div id='cssmenu'>
 	<% if session[:current_user] %>
+	<ul>
 		<form action="/sessions" method="post">
 			<input type="hidden" name="_method" value="delete">
 			<input type="submit" value="SIGN OUT">
@@ -17,8 +18,9 @@
 		<form action="/profiles">
 			<input type="submit" value="Profile">
 		</form>
-			<a href="/hangman">Hangman</a>
-			<a href="/tictactoe">Tic-Tac-Toe</a>
+			<li><a href="/hangman">Hangman</a></li>
+			<li><a href="/tictactoe">Tic-Tac-Toe</a></li>
+		</ul>
 	<% else %>
 		<ul>
 			<li><a href="/users/new">JOIN</a></li>

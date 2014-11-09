@@ -17,6 +17,7 @@ class ApplicationController < Sinatra::Base
 
   get '/' do
     if current_user
+      @user = User.find(session[:current_user])
       erb :authenticated
     else
       erb :not_authenticated
