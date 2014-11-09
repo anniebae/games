@@ -1,10 +1,10 @@
-<h2>Hangman</h2>
 <div class="letters">
-
-<center>
+<div class="center">
+<h2>Hangman</h2>
 <input type="submit" value="NEW WORD" class="new-game">
-<br>
-<br>
+<div id="random-word">
+</div>
+<div class="letter-button-container">
 <button class="alphabet-letter">A</button>
 <button class="alphabet-letter">B</button>
 <button class="alphabet-letter">C</button>
@@ -32,9 +32,7 @@
 <button class="alphabet-letter">X</button>
 <button class="alphabet-letter">Y</button>
 <button class="alphabet-letter">Z</button>
-<br>
-<br>
-
+</div>
 <!-- 
 <br>
 <br>
@@ -84,10 +82,8 @@
 
 
 
-</center>
-
-<div id="random-word">
 </div>
+
 
 <script>
 $(function(){
@@ -100,16 +96,6 @@ $(function(){
 
 		randomWord();
 	});
-
-
-// ****************** TROUBLE *********************
-
-	// $('.alphabet-letter').click(function() {
-	// 	$(this).attr('disabled', true);
-	// });
-
-// ****************** TROUBLE *********************
-
 	
 	$('.alphabet-letter').on("click", function(e){
 		e.preventDefault();
@@ -117,8 +103,6 @@ $(function(){
 		// displayLetter(guessed_letter);  LETS MAKE AN AJAX CALL INSTEAD
 		guessLetter(guessed_letter);
 	})
-
-
 
 
 });

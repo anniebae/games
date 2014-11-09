@@ -15,6 +15,8 @@ function randomWord(){
 		success: function(json) {
 			word = json;
 			createDivForLetters(word);
+			incorrects = [];
+			corrects = [];
 		}
 	});
 }
@@ -32,10 +34,10 @@ function guessLetter(guessed_letter){
 			checkLetter(data.letter);
 			displayLetter(data.letter);
 			if (data.lives <=0 ){
-				alert('You have lost')
+				alert('CAT: NOMNOMNOM ^.^')
 			}
 			if (data.complete){
-				alert('You have Won')
+				alert('MOUSE: YAAAAAY!')
 			}
 		}
 	});
@@ -43,9 +45,13 @@ function guessLetter(guessed_letter){
 
 function checkLetter(letter){
 	if (word.indexOf(letter) == -1 ){
-		incorrects.push(letter);
+		if (incorrects.indexOf(letter) < 0){
+			incorrects.push(letter);
+		}
 	} else {
-		corrects.push(letter);
+		if (corrects.indexOf(letter) < 0){
+			corrects.push(letter);
+		}
 	}	
 	displayGuessed();
 }
