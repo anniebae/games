@@ -18,4 +18,8 @@ class Hangman < ActiveRecord::Base
     game_state_arr = [].self.word.length
   end
 
+  def cat_mouse
+    "images/#{bad_guesses.length + 1}.png"
+  end
+
 end

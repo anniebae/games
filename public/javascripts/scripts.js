@@ -90,3 +90,20 @@ function createDivForLetters(word){
 	};
 };
 
+
+
+
+
+
+function displayCatMouse(){
+	$.ajax({
+		url: "/hangman/cat_mouse",
+		method: "GET",
+		dataType: "json",
+		success: function(data) {
+			var $catMouse = $('#cat-mouse');
+			$catMouse.attr("src", data.image);
+		}
+	});
+}
+

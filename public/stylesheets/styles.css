@@ -3,10 +3,17 @@ body {
 	font-family: Century;
 	color: #8F8F6A;
 }
+/********************************************/
+#tomjerry-gif img {
+  border: 5px solid #969688;
+}
+/********************************************/
+
 
 h2 {
-	font-family: "Avant Garde",Avantgarde,"Century Gothic",CenturyGothic,AppleGothic,sans-serif;
+	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 3em;
+	font-weight: 300;
 }
 
 h3 {
@@ -26,6 +33,10 @@ h3 {
 	text-align: center;
 	background-color: white;
 	padding: 30px;
+}
+
+.letter-button-container {
+  padding-bottom: 30px;
 }
 
 .center {
@@ -99,7 +110,7 @@ h3 {
    box-shadow: rgba(0,0,0,1) 0 1px 0;
    text-shadow: rgba(0,0,0,.4) 0 1px 0;
    color: white;
-   font-size: 8px;
+   font-size: 9px;
    font-family: Helvetica, Arial, Sans-Serif;
    text-decoration: none;
    vertical-align: middle;
@@ -127,7 +138,7 @@ h3 {
 	display: block;
 	padding: 15px 25px;
 	font-family: 'Open Sans', sans-serif;
-	font-weight: 700;
+	font-weight: 300;
 	text-transform: uppercase;
 	font-size: 14px;
 	position: relative;
@@ -189,7 +200,7 @@ h3 {
   display: block;
   padding: 15px 25px;
   font-family: 'Open Sans', sans-serif;
-  font-weight: 700;
+  font-weight: 300;
   text-transform: uppercase;
   font-size: 14px;
   position: relative;

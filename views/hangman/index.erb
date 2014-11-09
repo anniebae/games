@@ -2,7 +2,14 @@
 	<div class="center">
 		<h2>WHISKERS</h2>
 		<input type="submit" value="NEW WORD" class="new-game">
+
+		<div>
+			<img src="/images/1.png" height="350" width="350" id="cat-mouse">
+		</div>
+
+
 		<div id="random-word"></div>
+
 		<div class="letter-button-container">
 			<button class="alphabet-letter">A</button>
 			<button class="alphabet-letter">B</button>
@@ -56,8 +63,11 @@
 			var guessed_letter = $(this).text().toUpperCase();
 			// displayLetter(guessed_letter);  LETS MAKE AN AJAX CALL INSTEAD
 			guessLetter(guessed_letter);
+			displayCatMouse();
 		})
 	});
+
+
 </script>
 
 

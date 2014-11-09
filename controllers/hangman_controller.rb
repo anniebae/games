@@ -37,9 +37,16 @@ class HangmanController < ApplicationController
       letter: guessed_letter,
       game_status: game.game_status,
       bad_guesses: game.bad_guesses,
-      lives: (9 - game.bad_guesses.length),
+      lives: (5 - game.bad_guesses.length),
       complete: game.game_status == game.word
     }.to_json  # {letter: 't'}.to_json => responds to request with JSON representation of hash
+  end
+
+  get '/cat_mouse' do
+    game = current_user.hangmen.last
+    {
+      image: game.cat_mouse
+    }.to_json
   end
 
 end
