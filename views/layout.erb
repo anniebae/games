@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<title>Games</title>
-	<link rel="stylesheet" href="/stylesheets/styles.css">
-	<script src='javascripts/jquery.js'></script>
-	<script src='javascripts/scripts.js'></script>
-</head>
-<body>
-<div id='cssmenu'>
-	<% if session[:current_user] %>
-	<ul>
-		<form action="/sessions" method="post">
-			<input type="hidden" name="_method" value="delete">
-			<input type="submit" value="SIGN OUT">
-		</form>
-		<form action="/profiles">
-			<input type="submit" value="Profile">
-		</form>
-			<li><a href="/hangman">Hangman</a></li>
-			<li><a href="/tictactoe">Tic-Tac-Toe</a></li>
-		</ul>
-	<% else %>
-		<ul>
-			<li><a href="/users/new">JOIN</a></li>
-			<li><a href="/sessions/new">LOG IN</a></li>
-		</ul>
-	<% end %>
-</div>
+	<head>
+		<meta charset="UTF-8">
+		<title>Games</title>
+		<link rel="stylesheet" href="/stylesheets/styles.css">
+		<script src='javascripts/jquery.js'></script>
+		<script src='javascripts/scripts.js'></script>
+	</head>
+	<body>
+		<div id='cssmenu'>
+			<% if session[:current_user] %>
+				<ul>
+					<form action="/sessions" method="post">
+						<input type="hidden" name="_method" value="delete">
+						<input type="submit" value="SIGN OUT">
+					</form>
+					<form action="/profiles">
+						<input type="submit" value="Profile">
+					</form>
+						<li>
+							<a href="/hangman">WHISKERS</a>
+						</li>
+						<li>
+							<a href="/tictactoe">Tic-Tac-Toe</a>
+						</li>
+				</ul>
+			<% else %>
+				<ul>
+					<li>
+						<a href="/users/new">JOIN</a>
+					</li>
+					<li>
+						<a href="/sessions/new">LOG IN</a>
+					</li>
+				</ul>
+			<% end %>
+		</div>
 
-	<%= yield %>
-</body>
+			<%= yield %>
+	</body>
 </html>

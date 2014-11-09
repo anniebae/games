@@ -5,8 +5,6 @@ var word;
 var corrects = [];
 var incorrects = [];
 
-
-
 function randomWord(){
 	$.ajax({
 		url: "/hangman/word",
@@ -35,6 +33,7 @@ function guessLetter(guessed_letter){
 			displayLetter(data.letter);
 			if (data.lives <=0 ){
 				alert('CAT: NOMNOMNOM ^.^')
+				displayWord();
 			}
 			if (data.complete){
 				alert('MOUSE: YAAAAAY!')
@@ -71,11 +70,13 @@ function displayLetter(letter){
 	}
 }
 
-
-
+function displayWord(){
+	for (var i=0; i < word.length; i++){
+		displayLetter(word[i]);
+	}
+}
 
 function createDivForLetters(word){
-
 	for (var i = 0; i < word.length; i++) {
 		var div = document.createElement("div");
 		div.style.width = "50px";

@@ -1,74 +1,63 @@
 <div class="letters">
-<div class="center">
-<h2>HANGMAN</h2>
-<input type="submit" value="NEW WORD" class="new-game">
-<div id="random-word">
-</div>
-<div class="letter-button-container">
-<button class="alphabet-letter">A</button>
-<button class="alphabet-letter">B</button>
-<button class="alphabet-letter">C</button>
-<button class="alphabet-letter">D</button>
-<button class="alphabet-letter">E</button>
-<button class="alphabet-letter">F</button>
-<button class="alphabet-letter">G</button>
-<button class="alphabet-letter">H</button>
-<button class="alphabet-letter">I</button>
-<button class="alphabet-letter">J</button>
-<button class="alphabet-letter">K</button>
-<button class="alphabet-letter">L</button>
-<button class="alphabet-letter">M</button>
-<br>
-<button class="alphabet-letter">N</button>
-<button class="alphabet-letter">O</button>
-<button class="alphabet-letter">P</button>
-<button class="alphabet-letter">Q</button>
-<button class="alphabet-letter">R</button>
-<button class="alphabet-letter">S</button>
-<button class="alphabet-letter">T</button>
-<button class="alphabet-letter">U</button>
-<button class="alphabet-letter">V</button>
-<button class="alphabet-letter">W</button>
-<button class="alphabet-letter">X</button>
-<button class="alphabet-letter">Y</button>
-<button class="alphabet-letter">Z</button>
-</div>
+	<div class="center">
+		<h2>WHISKERS</h2>
+		<input type="submit" value="NEW WORD" class="new-game">
+		<div id="random-word"></div>
+		<div class="letter-button-container">
+			<button class="alphabet-letter">A</button>
+			<button class="alphabet-letter">B</button>
+			<button class="alphabet-letter">C</button>
+			<button class="alphabet-letter">D</button>
+			<button class="alphabet-letter">E</button>
+			<button class="alphabet-letter">F</button>
+			<button class="alphabet-letter">G</button>
+			<button class="alphabet-letter">H</button>
+			<button class="alphabet-letter">I</button>
+			<button class="alphabet-letter">J</button>
+			<button class="alphabet-letter">K</button>
+			<button class="alphabet-letter">L</button>
+			<button class="alphabet-letter">M</button>
+			<br>
+			<button class="alphabet-letter">N</button>
+			<button class="alphabet-letter">O</button>
+			<button class="alphabet-letter">P</button>
+			<button class="alphabet-letter">Q</button>
+			<button class="alphabet-letter">R</button>
+			<button class="alphabet-letter">S</button>
+			<button class="alphabet-letter">T</button>
+			<button class="alphabet-letter">U</button>
+			<button class="alphabet-letter">V</button>
+			<button class="alphabet-letter">W</button>
+			<button class="alphabet-letter">X</button>
+			<button class="alphabet-letter">Y</button>
+			<button class="alphabet-letter">Z</button>
+		</div>
 
-<div class="guesses">
-	<h3>BAD GUESSES</h3>
-		<p>
-			<div class="bad-guesses"></div>
-		</p>
-</div>
+		<div class="guesses">
+			<h3>BAD GUESSES</h3>
+			<p>
+				<div class="bad-guesses"></div>
+			</p>
+		</div>
+
 
 <script>
-$(function(){
-	
-	$('.new-game').on("click", function(e){
-		e.preventDefault();
-		$('#random-word').empty();
-		$('.good-guesses').empty();		// doesn't get rid of it completely...
-		$('.bad-guesses').empty();		// doesn't get rid of it completely...
+	$(function(){
+		$('.new-game').on("click", function(e){
+			e.preventDefault();
+			$('#random-word').empty();
+			$('.good-guesses').empty();
+			$('.bad-guesses').empty();
+			randomWord();
+		});
 
-		randomWord();
+		$('.alphabet-letter').on("click", function(e){
+			e.preventDefault();
+			var guessed_letter = $(this).text().toUpperCase();
+			// displayLetter(guessed_letter);  LETS MAKE AN AJAX CALL INSTEAD
+			guessLetter(guessed_letter);
+		})
 	});
-	
-	$('.alphabet-letter').on("click", function(e){
-		e.preventDefault();
-		var guessed_letter = $(this).text().toUpperCase();
-		// displayLetter(guessed_letter);  LETS MAKE AN AJAX CALL INSTEAD
-		guessLetter(guessed_letter);
-	})
-
-
-});
 </script>
-
-
-
-
-
-
-
 
 

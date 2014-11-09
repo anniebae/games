@@ -48,7 +48,6 @@ h3 {
 	margin-top: 100px;
 }
 
-
 .new-game {
    border-top: 1px solid #828774;
    background: #828774;
@@ -71,18 +70,17 @@ h3 {
    text-decoration: none;
    vertical-align: middle;
    }
+
 .new-game:hover {
    border-top-color: #bdbcb2;
    background: #bdbcb2;
    color: #000000;
    }
+
 .new-game:active {
    border-top-color: #968aa1;
    background: #968aa1;
    }
-
-
-
 
 .alphabet-letter {
    border-top: 1px solid #828774;
@@ -116,15 +114,6 @@ h3 {
    background: #968aa1;
    }
 
-
-
-
-
-/*.guesses-style {
-	border: 1px solid brown;
-	padding: 4px;
-}*/
-
 #cssmenu form {
 	display: inline-block;
 }
@@ -157,11 +146,11 @@ h3 {
   width: 100%;
 }
 
-
 #cssmenu {
   background: #8F8F6A;
   width: auto;
 }
+
 #cssmenu ul {
   list-style: none;
   margin: 0;
@@ -170,6 +159,7 @@ h3 {
   display: block;
   zoom: 1;
 }
+
 #cssmenu ul:after {
   content: " ";
   display: block;
@@ -178,17 +168,21 @@ h3 {
   clear: both;
   visibility: hidden;
 }
+
 #cssmenu ul li {
   display: inline-block;
   padding: 0;
   margin: 0;
 }
+
 #cssmenu.align-right ul li {
   float: right;
 }
+
 #cssmenu.align-center ul {
   text-align: center;
 }
+
 #cssmenu ul li a {
   color: #ffffff;
   text-decoration: none;
@@ -205,12 +199,15 @@ h3 {
   -o-transition: color .25s;
   transition: color .25s;
 }
+
 #cssmenu ul li a:hover {
   color: #333333;
 }
+
 #cssmenu ul li a:hover:before {
   width: 100%;
 }
+
 #cssmenu ul li a:after {
   content: "";
   display: block;
@@ -222,6 +219,7 @@ h3 {
   background: #ffffff;
   opacity: .5;
 }
+
 #cssmenu ul li a:before {
   content: "";
   display: block;
@@ -237,6 +235,7 @@ h3 {
   -o-transition: width .25s;
   transition: width .25s;
 }
+
 #cssmenu ul li.last > a:after,
 #cssmenu ul li:last-child > a:after {
   display: none;
@@ -245,13 +244,16 @@ h3 {
 #cssmenu ul li.active a:before {
   width: 100%;
 }
+
 #cssmenu.align-right li.last > a:after,
 #cssmenu.align-right li:last-child > a:after {
   display: block;
 }
+
 #cssmenu.align-right li:first-child a:after {
   display: none;
 }
+
 @media screen and (max-width: 768px) {
   #cssmenu ul li {
     float: none;
