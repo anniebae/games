@@ -12,6 +12,5 @@ module Sinatra
       redirect '/' unless current_user
     end
   end
-
   helpers AuthenticationHelper
 end

@@ -91,11 +91,6 @@ function createDivForLetters(word){
 	};
 };
 
-
-
-
-
-
 function displayCatMouse(){
 	$.ajax({
 		url: "/hangman/cat_mouse",
@@ -107,4 +102,3 @@ function displayCatMouse(){
 		}
 	});
 }
-
