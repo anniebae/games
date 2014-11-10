@@ -1,6 +1,6 @@
 body {
 	background-color: #E8E8E8;
-	font-family: Century;
+	font-family: 'Open Sans Condensed', sans-serif;
 	color: #8F8F6A;
 }
 
@@ -8,6 +8,12 @@ p {
   font-family: 'Open Sans Condensed', sans-serif;
   font-weight: 300;
   font-size: 14px;
+}
+
+h1 {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.5em;
+  font-weight: 300;
 }
 
 
@@ -27,6 +33,10 @@ div.myButton input {
   width: 80px;
   height: 35px;
   border: none;
+}
+
+.scoreboard {
+  padding: 30px;
 }
 
 .avatar {

@@ -1,7 +1,27 @@
 <center>
 <h2><%= @user.username.upcase %></h2>
 <img src="<%= @user.avatar %>" class="avatar">
-</center>
 
-<h1>Wins! <%= @num_wins %></h1>
-<h1>Lossers! <%= @num_lose %></h1>
+
+<div class="scoreboard">
+<table border="2" width="40%" CELLSPACING="1">
+	<tr>
+		<th colspan="2">
+			<h1>SCOREBOARD</h1>
+		</th>
+	</tr>
+	<tr>
+		<th><p>WINS!</p></th>
+		<th><p>LOSSES!</p></th>
+	</tr>
+	<tr align="center">
+		<td>
+			<p><%= @num_wins %></p>
+		</td>
+		<td>
+			<p><%= @num_lose %></p>
+		</td>
+	</tr>
+</table>
+</div>
+</center>
