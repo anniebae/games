@@ -2,11 +2,16 @@ require 'bundler'
 Bundler.require(:default)
 
 require './controllers/application_controller'
+require './controllers/hangman_controller'
+require './controllers/profiles_controller'
+require './controllers/sessions_controller'
+require './controllers/users_controller'
 
-Dir.glob('./{models,helpers,controllers}/*.rb').each do |file|
-	require file
-	puts "required #{file}"
-end
+require './helpers/authentication_helper'
+
+require './models/hangman'
+require './models/user'
+require './models/word'
 
 map('/'){ run ApplicationController }
 map('/users'){ run UsersController }
