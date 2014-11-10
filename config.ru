@@ -1,13 +1,13 @@
 require 'bundler'
 Bundler.require(:default)
 
+require './helpers/authentication_helper'
+
 require './controllers/application_controller'
 require './controllers/hangman_controller'
 require './controllers/profiles_controller'
 require './controllers/sessions_controller'
 require './controllers/users_controller'
-
-require './helpers/authentication_helper'
 
 require './models/hangman'
 require './models/user'
