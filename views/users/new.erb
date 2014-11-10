@@ -1,10 +1,25 @@
 <center>
-<h2>SIGN UP TO PLAY</h2>
+<h2>JOIN TO PLAY</h2>
+<div class="tomjerry-join">
+	<img src="http://kslearning.co.ke/wp-content/uploads/2014/10/Tom-and-Jerry-Kids-Wallpapers.jpg">
+</div>
+
 
 <form action="/users" method="post">
-	<input type="text" name="user[username]" placeholder="Username">
-	<input type="text" name="user[avatar]" placeholder="Avatar URL">
-	<input type="password" name="password" placeholder="Password">
-	<input type="submit">
+	<p>
+		USERNAME:
+		<input type="text" name="user[username]" placeholder="Username">
+	</p>
+	<p>
+		PASSWORD:
+		<input type="password" name="password" placeholder="Password">
+	</p>
+	<p>
+		PHOTO:
+		<input type="file" name="user[avatar]" placeholder="Avatar URL" size="40">
+	</p>
+	<div class="myButton">
+		<input type="submit">
+	</div>
 </form>
 </center>

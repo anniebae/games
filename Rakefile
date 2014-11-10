@@ -44,3 +44,16 @@ namespace :db do
   end
 
 end
+
+
+
+
+namespace :sin do
+  desc "db console"
+  task :console do
+    require './models/user'
+    require './models/word'
+    require './models/hangman'
+    binding.pry
+  end
+end

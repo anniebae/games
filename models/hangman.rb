@@ -2,10 +2,14 @@ class Hangman < ActiveRecord::Base
   belongs_to :user
 
   def guess_letter(letter)
-    idx = self.word.index(letter)
-    if idx
+
+    if self.word.include? letter
       state = self.game_status.dup
-      state[idx] = letter
+      self.word.chars.each_with_index do |word_letter, idx|
+        if word_letter == letter
+          state[idx] = letter
+        end
+      end
       self.game_status = state
     else
       bad_guesses += letter
@@ -20,6 +24,14 @@ class Hangman < ActiveRecord::Base
 
   def cat_mouse
     "images/#{bad_guesses.length + 1}.png"
+  end
+
+
+  def check_complete
+    if self.word == self.game_status
+      self.complete = true
+    end
+    self.complete
   end
 
 end

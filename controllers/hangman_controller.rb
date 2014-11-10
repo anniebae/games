@@ -1,4 +1,6 @@
 class HangmanController < ApplicationController
+
+
   get '/' do
     erb :'hangman/index'
   end
@@ -31,9 +33,13 @@ class HangmanController < ApplicationController
     else
       game.bad_guesses += guessed_letter
     end
+    game.check_complete
     game.save
 
+
+
     {
+      word: game.word,
       letter: guessed_letter,
       game_status: game.game_status,
       bad_guesses: game.bad_guesses,

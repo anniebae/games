@@ -1,13 +1,14 @@
 body {
-	background-color: lightgrey;
+	background-color: #E8E8E8;
 	font-family: Century;
 	color: #8F8F6A;
 }
-/********************************************/
-#tomjerry-gif img {
-  border: 5px solid #969688;
+
+p {
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
 }
-/********************************************/
 
 
 h2 {
@@ -21,10 +22,18 @@ h3 {
 	font-size: 14px;
 }
 
+div.myButton input {
+  cursor:pointer;
+  width: 80px;
+  height: 35px;
+  border: none;
+}
+
 .avatar {
 	height: 300px;
 	width: 300px;
 	border-radius: 150px;
+  border: 5px solid #969688;
 }
 
 .games {
@@ -41,6 +50,22 @@ h3 {
 
 .center {
 	text-align: center;
+}
+
+#tomjerry-gif img {
+  border: 5px solid #969688;
+}
+
+.tomjerry-join img {
+  border: 5px solid #969688;
+  height: 250px;
+  width: 250px;
+}
+
+.tomjerry-signin img {
+  border: 5px solid #969688;
+  height: 250px;
+  width: 250px;
 }
 
 #random-word {

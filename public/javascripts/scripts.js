@@ -15,6 +15,7 @@ function randomWord(){
 			createDivForLetters(word);
 			incorrects = [];
 			corrects = [];
+			displayCatMouse();
 		}
 	});
 }
