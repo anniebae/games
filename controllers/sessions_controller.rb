@@ -5,13 +5,6 @@ class SessionsController < ApplicationController
 
   post '/' do
     user = User.find_by({username: params[:username]})
-    # if user.password == params[:password]
-    #   session[:current_user] = user.id
-    #   redirect '/profiles'
-    # else
-    #   redirect '/users/new'
-    # end
-
     if user
       if user.password == params[:password]
         session[:current_user] = user.id
@@ -22,14 +15,13 @@ class SessionsController < ApplicationController
       end
     else
       redirect '/users/new'
-    end     
+    end
   end
 
   get '/error' do
   @error = "** wrong password **"
   erb :'sessions/new'
   end
-
 
   delete '/' do
     session[:current_user] = nil

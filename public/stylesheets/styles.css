@@ -16,7 +16,6 @@ h1 {
   font-weight: 300;
 }
 
-
 h2 {
 	font-family: 'Open Sans Condensed', sans-serif;
 	font-size: 3em;
@@ -26,6 +25,22 @@ h2 {
 h3 {
 	font-family: "Century Gothic",CenturyGothic,AppleGothic,sans-serif;
 	font-size: 14px;
+}
+
+.login-wrapper {
+  text-align: center;
+}
+
+.newuser-wrapper {
+  text-align: center;
+}
+
+.profiles {
+  text-align: center;
+}
+
+table {
+  margin: 0 auto;
 }
 
 div.myButton input {
