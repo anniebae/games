@@ -26,26 +26,10 @@ namespace :db do
   task :load_data do
 
     require 'csv'
-
     CSV.foreach('Random_Words.csv', headers: true) do |row|
       Word.create(word: row['Word'])
     end
-
-    # conn = PG::Connection.open({dbname: 'games_db'})
-
-    # CSV.foreach('Random_Words.csv', :headers => true) do |row|
-    #   word = row["Word"]
-
-    #   sql_statement = <<-eos
-    #     INSERT INTO words
-    #       (word)
-    #     VALUES
-    #       ($1)
-    #   eos
-
-    #   conn.exec_params(sql_statement, [word])
-    # end
-    # conn.close
+    
   end
 
 end
