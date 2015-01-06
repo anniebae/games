@@ -3,6 +3,7 @@ Bundler.require
 
 require 'sinatra/activerecord/rake'
 require_relative 'models/user'
+require_relative 'models/word'
 
 namespace :db do
   require_relative 'connection'
@@ -26,21 +27,25 @@ namespace :db do
 
     require 'csv'
 
-    conn = PG::Connection.open({dbname: 'games_db'})
-
-    CSV.foreach('Random_Words.csv', :headers => true) do |row|
-      word = row["Word"]
-
-      sql_statement = <<-eos
-        INSERT INTO words
-          (word)
-        VALUES
-          ($1)
-      eos
-
-      conn.exec_params(sql_statement, [word])
+    CSV.foreach('Random_Words.csv', headers: true) do |row|
+      Word.create(word: row['Word'])
     end
-    conn.close
+
+    # conn = PG::Connection.open({dbname: 'games_db'})
+
+    # CSV.foreach('Random_Words.csv', :headers => true) do |row|
+    #   word = row["Word"]
+
+    #   sql_statement = <<-eos
+    #     INSERT INTO words
+    #       (word)
+    #     VALUES
+    #       ($1)
+    #   eos
+
+    #   conn.exec_params(sql_statement, [word])
+    # end
+    # conn.close
   end
 
 end
