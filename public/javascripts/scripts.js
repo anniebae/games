@@ -1,4 +1,4 @@
-console.log('yay')
+console.log('javascript')
 
 // ***** Global *****
 var word;

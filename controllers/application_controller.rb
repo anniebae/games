@@ -3,10 +3,10 @@ require 'sinatra/base'
 class ApplicationController < Sinatra::Base
   helpers Sinatra::AuthenticationHelper
   helpers ActiveSupport::Inflector
-  ActiveRecord::Base.establish_connection({
-    adapter: 'postgresql',
-    database: 'games_db'
-    })
+
+  ActiveRecord::Base.establish_connection(
+    ENV['DATABASE_URL'] || 'postgres://localhost/games_db'
+  )
 
   set :public_folder, File.expand_path('../../public', __FILE__)
   set :views, File.expand_path('../../views', __FILE__)

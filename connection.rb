@@ -1,4 +1,3 @@
-ActiveRecord::Base.establish_connection({
-  adapter: 'postgresql',
-  database: 'games_db'
-  })
+ActiveRecord::Base.establish_connection(
+    ENV['DATABASE_URL'] || 'postgres://localhost/games_db'
+  )
