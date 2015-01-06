@@ -7,3 +7,5 @@ gem 'json'
 gem 'pry'
 gem 'pg'
 gem 'bcrypt'
+
+ruby '2.1.2'
