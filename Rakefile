@@ -24,7 +24,7 @@ namespace :db do
   desc "seed database with random_words_list"
   task :load_data do
 
-    require 'CSV'
+    require 'csv'
 
     conn = PG::Connection.open({dbname: 'games_db'})
 
