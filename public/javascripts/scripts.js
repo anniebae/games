@@ -33,11 +33,11 @@ function guessLetter(guessed_letter){
 			checkLetter(data.letter);
 			displayLetter(data.letter);
 			if (data.lives <=0 ){
-				alert('CAT: NOMNOMNOM ^.^')
+				sweetAlert('CAT: NOMNOMNOM ^.^');
 				displayWord();
 			}
 			if (data.complete){
-				alert('MOUSE: YAAAAAY!')
+				sweetAlert('MOUSE: YAAAAAY!');
 			}
 		}
 	});
